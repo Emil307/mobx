@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { observer } from 'mobx-react-lite';
+import head from '../store/head';
 
 const Container = styled.div`
   width: 800px;
@@ -44,10 +46,10 @@ const Leg = styled.div`
   border: 1px #000 solid;
 `
 
-const Skin: React.FC = () => {
+const Skin: React.FC = observer(() => {
   return (
     <Container>
-      <Head></Head>
+      <Head style={{background: head.color}}></Head>
       <Arms>
         <Arm></Arm>
         <Body></Body>
@@ -59,6 +61,6 @@ const Skin: React.FC = () => {
       </Legs>
     </Container>
   )
-}
+})
 
 export default Skin
