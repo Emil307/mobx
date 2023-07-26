@@ -9,6 +9,7 @@ const Content = styled.div`
   justify-content: space-between;
   width: 1200px;
   margin: 0 auto;
+  padding-top: 20px;
 `
 
 const SkinPage: React.FC = () => {
