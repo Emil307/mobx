@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Container = styled.div`
+  width: 800px;
+`
+
 const Head = styled.div`
   width: 100px;
   height: 100px;
@@ -15,13 +19,13 @@ const Legs = styled.div``
 
 const Skin: React.FC = () => {
   return (
-    <div>
+    <Container>
       <Head></Head>
       <Arms>
         <Body></Body>
       </Arms>
       <Legs></Legs>
-    </div>
+    </Container>
   )
 }
 
