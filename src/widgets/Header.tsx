@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import navbar from '../store/navbar';
 
 const Container = styled.div`
   display: flex;
@@ -26,12 +27,17 @@ const Button = styled.button`
 const Header: React.FC = () => {
   const [active, setActive] = useState('head');
 
+  function changeNavbar(part: string) {
+    setActive(part);
+    navbar.changePart(part);
+  }
+
   return (
     <Container>
-      <Button onClick={() => setActive('head')} style={active === 'head' ? {background: '#000', color: '#fff'} : {}}>головы</Button>
-      <Button onClick={() => setActive('legs')} style={active === 'legs' ? {background: '#000', color: '#fff'} : {}}>ноги</Button>
-      <Button onClick={() => setActive('arms')} style={active === 'arms' ? {background: '#000', color: '#fff'} : {}}>руки</Button>
-      <Button onClick={() => setActive('body')} style={active === 'body' ? {background: '#000', color: '#fff'} : {}}>тело</Button>
+      <Button onClick={() => changeNavbar('head')} style={active === 'head' ? {background: '#000', color: '#fff'} : {}}>головы</Button>
+      <Button onClick={() => changeNavbar('legs')} style={active === 'legs' ? {background: '#000', color: '#fff'} : {}}>ноги</Button>
+      <Button onClick={() => changeNavbar('arms')} style={active === 'arms' ? {background: '#000', color: '#fff'} : {}}>руки</Button>
+      <Button onClick={() => changeNavbar('body')} style={active === 'body' ? {background: '#000', color: '#fff'} : {}}>тело</Button>
     </Container>
   )
 }

@@ -3,6 +3,7 @@ import head from '../store/head';
 import styled from 'styled-components';
 import { observer } from 'mobx-react-lite';
 import navbar from '../store/navbar';
+import body from '../store/body';
 
 const Button = styled.button`
   width: 50px;
@@ -11,10 +12,21 @@ const Button = styled.button`
 `
 
 const Navbar: React.FC = observer(() => {
-  const [active, setActive] = useState('head');
+  const part = navbar.part;
 
   function changeColor(color: string) {
-    head.changeColor(color);
+    if (part === 'head') {
+      head.changeColor(color);
+    }
+    if (part === 'arms') {
+      head.changeColor(color);
+    }
+    if (part === 'legs') {
+      head.changeColor(color);
+    }
+    if (part === 'body') {
+      body.changeColor(color);
+    }
   }
 
   return (

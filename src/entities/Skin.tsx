@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { observer } from 'mobx-react-lite';
 import head from '../store/head';
+import body from '../store/body';
 
 const Container = styled.div`
   width: 800px;
@@ -52,7 +53,7 @@ const Skin: React.FC = observer(() => {
       <Head style={{background: head.color}}></Head>
       <Arms>
         <Arm></Arm>
-        <Body></Body>
+        <Body style={{background: body.color}}></Body>
         <Arm></Arm>
       </Arms>
       <Legs>
